@@ -1,20 +1,23 @@
-main: ${PACKAGE}.${NAME}
-name: ${NAME}
-version: "${VERSION}"
-api-version: "1.21.1"
-author: AUTHOR
-description: DESCRIPTION
+name: AdvancedBanther
+version: 1.0
+main: com.sunpowder.banther.advancedbanther
+api-version: 1.16
 commands:
-  ex:
-    description: Base command for EXAMPLE
-    usage: "For a list of commands, type /ex help"
-    aliases: example
+  doomaxe:
+    description: Summons the legendary DoomAxe
+    usage: /doomaxe
+    permission: advancedbanther.use
+  doomaxe-admin:
+    description: Manage DoomAxe permissions
+    usage: /doomaxe-admin <add|remove|list> <player>
+    permission: advancedbanther.admin
 permissions:
-  example.test:
-    description: DESCRIPTION
-    default: true
-  example.*:
-    description: Grants all other permissions
+  advancedbanther.use:
+    description: Allows use of the DoomAxe command
     default: false
-    children:
-      example.test: true
+  advancedbanther.bypass:
+    description: Bypasses all DoomAxe restrictions
+    default: op
+  advancedbanther.admin:
+    description: Allows management of DoomAxe permissions
+    default: op
